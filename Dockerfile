@@ -13,7 +13,7 @@ RUN apt-get -y install unzip wget
 RUN apt-get -y install php5-fpm php5-sqlite php-xml-parser php5-gd php5-tidy php5-curl
 
 # Remove APT cache
-RUN rm -rf /var/lib/apt/lists/*
+RUN apt-get clean
 
 # Pull Wallabag and Twig to /var/www/
 RUN wget -qO- -O /tmp/wallabag.zip http://wllbg.org/latest && \
